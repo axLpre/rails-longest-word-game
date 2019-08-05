@@ -1,0 +1,24 @@
+<h1>Result</h1>
+
+<ul class="list-letter">
+  <% @letters.each do |letter| %>
+  <li class="given-letter"><%= letter %></li>
+  <% end %>
+</ul>
+<br>
+<p>
+<%= @answer %>
+<br>
+<% if @result == :not_in_the_grid %>
+<p>Sorry but <strong><%= @answer %></strong>  can't be build out of, <%= @letters %> </p>
+<% elsif @result == :not_english_word %>
+<p><strong><%= @answer%></strong> Sorry not a English word</p>
+<% else %>
+<p>Congratulation <strong><%= @answer %></strong> is a valid English word!</p>
+<% end %>
+  
+</p>
+<p>
+<br>
+  <%= link_to "Play again", new_path %>
+</p>
